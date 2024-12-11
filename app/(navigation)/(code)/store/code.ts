@@ -4,6 +4,8 @@ import hljs from "highlight.js";
 import { atomWithHash } from "jotai-location";
 import { LANGUAGES, Language } from "../util/languages";
 
+require("highlightjs-motoko")(hljs);
+
 type CodeSample = {
   language: Language;
   code: string;
@@ -11,40 +13,11 @@ type CodeSample = {
 
 const CODE_SAMPLES: CodeSample[] = [
   {
-    language: LANGUAGES.javascript,
-    code: `module.exports = leftpad;
-
-function leftpad(str, len, ch) {
-  str = String(str);
-  var i = -1;
-
-  if (!ch && ch !== 0) ch = ' ';
-
-  len = len - str.length;
-
-  while (i++ < len) {
-    str = ch + str;
+    language: LANGUAGES.motoko,
+    code: `actor {
+  public func hello(name : Text) : async Text {
+    "Hello, " # name # "!"
   }
-  return str;
-}`,
-  },
-  {
-    language: LANGUAGES.swift,
-    code: `import SwiftUI
-
-struct CircleImage: View {
-  var body: some View {
-    Image("turtlerock")
-      .clipShape(Circle())
-  }
-}`,
-  },
-  {
-    language: LANGUAGES.tsx,
-    code: `import { Detail } from "@raycast/api";
-
-export default function Command() {
-  return <Detail markdown="Hello World" />;
 }`,
   },
 ];

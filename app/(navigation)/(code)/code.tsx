@@ -29,7 +29,14 @@ export function Code() {
   useEffect(() => {
     getHighlighterCore({
       themes: [shikiTheme, tailwindLight, tailwindDark],
-      langs: [LANGUAGES.javascript.src(), LANGUAGES.tsx.src(), LANGUAGES.swift.src(), LANGUAGES.python.src()],
+      langs: [
+        LANGUAGES.javascript.src(),
+        LANGUAGES.tsx.src(),
+        LANGUAGES.swift.src(),
+        LANGUAGES.python.src(),
+        LANGUAGES.motoko.src(),
+        LANGUAGES.candid.src(),
+      ],
       loadWasm: getWasm,
     }).then((highlighter) => {
       setHighlighter(highlighter as Highlighter);

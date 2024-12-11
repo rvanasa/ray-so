@@ -270,6 +270,16 @@ export default function Components() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
+                  <SelectLabel>ICP</SelectLabel>
+                  <SelectItem value="motoko">
+                    <SelectItemText>Motoko</SelectItemText>
+                  </SelectItem>
+                  <SelectItem value="candid">
+                    <SelectItemText>Candid</SelectItemText>
+                  </SelectItem>
+                </SelectGroup>
+                <SelectSeparator />
+                <SelectGroup>
                   <SelectLabel>Popular</SelectLabel>
                   <SelectItem value="typescript">
                     <SelectItemText>TypeScript</SelectItemText>

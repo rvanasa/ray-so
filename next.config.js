@@ -12,6 +12,8 @@ const nextConfig = {
     optimizePackageImports: ["shiki"],
   },
   webpack(config) {
+    config.experiments.asyncWebAssembly = true;
+
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.(".svg"));
 
@@ -42,7 +44,7 @@ const nextConfig = {
             },
           },
         ],
-      }
+      },
     );
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.

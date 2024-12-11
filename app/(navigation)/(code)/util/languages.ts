@@ -4,6 +4,14 @@ export type Language = {
 };
 
 export const LANGUAGES: { [index: string]: Language } = {
+  motoko: {
+    name: "Motoko",
+    src: async () => ({ ...require("./grammars/Motoko.tmLanguage.json"), name: "motoko" }),
+  },
+  candid: {
+    name: "Candid",
+    src: async () => ({ ...require("./grammars/Candid.tmLanguage.json"), name: "candid" }),
+  },
   shell: {
     name: "Bash",
     src: () => import("shiki/langs/bash.mjs"),
